@@ -1,11 +1,14 @@
-inp = int(input())
-fechado = []
-aberto = []
-for i in range(1, inp + 1):
-  fechado.append(i)
-  j = i + 1
-  while j <= i:
-    if fechado[j] % i == 0:
-      aberto.append(fechado.pop(fechado[j]))
-    j+=1
-
+while True:
+    N = int(input())    
+    if N == 0:
+        break    
+    portas = []
+    count = 1    
+    while(count**2 <= N ):
+        portas.append(count**2)
+        count+= 1    
+    for i in range(len(portas)):
+        if i < len(portas) - 1:
+            print(f"{portas[i]}", end=' ')
+        else:
+            print(f"{portas[i]}")
